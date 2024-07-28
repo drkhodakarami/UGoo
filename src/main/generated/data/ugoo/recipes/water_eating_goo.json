@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:water_bucket"
+    },
+    "D": {
+      "item": "minecraft:gray_wool"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "W": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "pattern": [
+    "DBD",
+    "EWE",
+    "DED"
+  ],
+  "result": {
+    "item": "ugoo:water_eating_goo"
+  },
+  "show_notification": true
+}

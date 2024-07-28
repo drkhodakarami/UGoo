@@ -1,0 +1,9 @@
+// 1.20.2	2024-07-28T13:35:25.6585872	UGoo/Block Loot Tables
+ffa1e24ace4e2da9c2169aaaaa7919758a22308f data\ugoo\loot_tables\blocks\bridge_goo.json
+b05babd24e04c3fd3a99e9004e7205021969dc87 data\ugoo\loot_tables\blocks\tunneling_goo.json
+aef50be5c548c836d75eae3ba04f5cb1f0ad9042 data\ugoo\loot_tables\blocks\chunk_goo.json
+49fba94106e18652e16cc5384da49d6201d3cf5d data\ugoo\loot_tables\blocks\water_generating_goo.json
+23f16b6e1f17316944f8a27bc0ef380b678499f3 data\ugoo\loot_tables\blocks\towering_goo.json
+b5e83fc7d2e5610d1b0924921caa0008079907dd data\ugoo\loot_tables\blocks\water_eating_goo.json
+dd2765bb4562d608b341eece12a3959f396fbaab data\ugoo\loot_tables\blocks\lava_eating_goo.json
+54d98cd68ceb316a2746b8bc3946db56a531f21b data\ugoo\loot_tables\blocks\lava_generating_goo.json

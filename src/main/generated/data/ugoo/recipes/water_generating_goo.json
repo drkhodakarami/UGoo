@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:water_bucket"
+    },
+    "D": {
+      "item": "minecraft:blue_wool"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "DBD",
+    "EDE",
+    "DBD"
+  ],
+  "result": {
+    "item": "ugoo:water_generating_goo"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "ugoo:bridge_goo",
+    "ugoo:chunk_goo",
+    "ugoo:lava_eating_goo",
+    "ugoo:lava_generating_goo",
+    "ugoo:towering_goo",
+    "ugoo:tunneling_goo",
+    "ugoo:water_eating_goo",
+    "ugoo:water_generating_goo"
+  ]
+}

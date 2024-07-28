@@ -1,0 +1,43 @@
+{
+  "ugoo.main.group": "Utility Goo",
+  "tag.block.ugoo.bridge_goo_blacklist": "Bridge Goo Blacklist",
+  "tag.block.ugoo.chunk_goo_blacklist": "Chunk Goo Blacklist",
+  "tag.block.ugoo.towering_goo_blacklist": "Towering Goo Blacklist",
+  "tag.block.ugoo.tunneling_goo_blacklist": "Tunneling Goo Blacklist",
+
+  "block.ugoo.bridge_goo": "Bridge Goo",
+  "block.ugoo.tunneling_goo": "Tunneling Goo",
+  "block.ugoo.towering_goo": "Towering Goo",
+  "block.ugoo.chunk_goo": "Chunk Goo",
+  "block.ugoo.lava_eating_goo": "Lava Eating Goo",
+  "block.ugoo.lava_generating_goo": "Lava Generating Goo",
+  "block.ugoo.lava_pump_goo": "Lava Pumping Goo",
+  "block.ugoo.water_eating_goo": "Water Eating Goo",
+  "block.ugoo.water_generating_goo": "Water Generating Goo",
+  "block.ugoo.water_pump_goo": "Water Pumping Goo",
+
+  "gamerule.gooSpread": "Should Goo Spread",
+  "gamerule.lavaPumpGoo": "Should Lava Pump Goo Work",
+  "gamerule.waterPumpGoo": "Should Water Pump Goo Work",
+  "gamerule.gooSpreadDistance": "Goo Spread Distance",
+  "gamerule.pumpDistance": "Goo Pump Working Distance",
+  "gamerule.pumpDepth": "Goo Pump Working Depth",
+
+  "tooltip.ugoo.warning": "§4CAUTION: CAN POTENTIALLY DESTROY WORLDS§r",
+  "tooltip.ugoo.shift": "Press §eSHIFT§r for more Information!",
+
+  "tooltip.ugoo.air_bomb": "Will be replaced with air!",
+  "tooltip.ugoo.stone_bomb": "Will be replaced with stone block!",
+  "tooltip.ugoo.chunk_bomb": "Will be replaced with air and move down!",
+
+  "tooltip.ugoo.bridge": "Will be place a bridge structure. The floor is at the same level",
+  "tooltip.ugoo.chunk": "Will eat the whole chunk except black listed blocks. Works like a query, causing big hole in world!",
+  "tooltip.ugoo.lava_eating": "Will eat lava as long as it has a lava block beside itself. Can go infinite distance!",
+  "tooltip.ugoo.lava_generating": "Will generate lava as long as it has air block beside itself at same level. Can go infinite distance!",
+  "tooltip.ugoo.lava_pump": "Will pump lava from distance bellow itself (looks for 64 levels down). Only works if you have a container that can accept a bucket of lava above the pump!",
+  "tooltip.ugoo.towering": "Will dig down to bedrock (bottom dimension level). It will put stone at sides that are Air/Lava/Water!",
+  "tooltip.ugoo.tunneling": "Will dig a horizontal tunnel one level above itself.",
+  "tooltip.ugoo.water_eating": "Will eat water as long as it has a water block beside itself. Can go infinite distance!",
+  "tooltip.ugoo.water_generating": "Will generate water as long as it has air block beside itself at same level. Can go infinite distance!",
+  "tooltip.ugoo.water_pump": "Will pump water from distance bellow itself (looks for 64 levels down). Only works if you have a container that can accept a bucket of water above the pump!"
+}

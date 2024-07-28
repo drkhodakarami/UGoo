@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:lava_bucket"
+    },
+    "D": {
+      "item": "minecraft:red_wool"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "W": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "pattern": [
+    "DBD",
+    "EWE",
+    "DBD"
+  ],
+  "result": {
+    "item": "ugoo:lava_generating_goo"
+  },
+  "show_notification": true
+}

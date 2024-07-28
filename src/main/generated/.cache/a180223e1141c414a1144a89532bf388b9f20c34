@@ -1,0 +1,7 @@
+// 1.20.2	2024-07-28T13:35:25.6507739	UGoo/Tags for minecraft:block
+0b10853db4d1eb8e549753cebf1f7867daccde64 data\minecraft\tags\blocks\mineable\pickaxe.json
+049bfd6d53078217c004698501036ccd08f62412 data\ugoo\tags\blocks\towering_goo_blacklist.json
+049bfd6d53078217c004698501036ccd08f62412 data\ugoo\tags\blocks\bridge_goo_blacklist.json
+049bfd6d53078217c004698501036ccd08f62412 data\ugoo\tags\blocks\tunneling_goo_blacklist.json
+0b10853db4d1eb8e549753cebf1f7867daccde64 data\minecraft\tags\blocks\needs_stone_tool.json
+049bfd6d53078217c004698501036ccd08f62412 data\ugoo\tags\blocks\chunk_goo_blacklist.json

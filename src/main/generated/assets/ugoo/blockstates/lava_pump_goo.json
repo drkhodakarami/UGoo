@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ugoo:block/lava_pump_goo"
+    }
+  }
+}

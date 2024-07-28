@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:pink_wool"
+    },
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "P": {
+      "item": "minecraft:diamond_pickaxe"
+    },
+    "W": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "pattern": [
+    "DPD",
+    "EWE",
+    "DED"
+  ],
+  "result": {
+    "item": "ugoo:chunk_goo"
+  },
+  "show_notification": true
+}
