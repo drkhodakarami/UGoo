@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.BridgeGooBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import net.minecraft.block.*;
@@ -26,12 +27,20 @@ import org.jetbrains.annotations.Nullable;
 
 public class BridgeGoo extends BlockWithEntity
 {
+    public static final MapCodec<BridgeGoo> CODEC = createCodec(BridgeGoo::new);
+
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty UNSTABLE = Properties.UNSTABLE;
 
     public BridgeGoo(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {

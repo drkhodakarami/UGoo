@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.WaterGeneratingGooBlockEntity;
 import jiraiyah.ugoo.blockentity.WaterPumpGooBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
@@ -27,9 +28,17 @@ import org.jetbrains.annotations.Nullable;
 
 public class WaterPumpGoo extends BlockWithEntity
 {
+    public static final MapCodec<WaterPumpGoo> CODEC = createCodec(WaterPumpGoo::new);
+
     public WaterPumpGoo(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {

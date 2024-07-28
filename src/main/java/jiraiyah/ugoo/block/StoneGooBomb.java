@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.StoneGooBombBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import net.minecraft.block.Block;
@@ -20,11 +21,19 @@ import org.jetbrains.annotations.Nullable;
 
 public class StoneGooBomb extends BlockWithEntity
 {
+    public static final MapCodec<StoneGooBomb> CODEC = createCodec(StoneGooBomb::new);
+
     public static final BooleanProperty UNSTABLE = Properties.UNSTABLE;
 
     public StoneGooBomb(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {

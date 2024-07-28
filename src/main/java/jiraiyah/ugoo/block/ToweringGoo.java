@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.ToweringGooBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import net.minecraft.block.Block;
@@ -27,11 +28,19 @@ import org.jetbrains.annotations.Nullable;
 
 public class ToweringGoo extends BlockWithEntity
 {
+    public static final MapCodec<ToweringGoo> CODEC = createCodec(ToweringGoo::new);
+
     public static final BooleanProperty UNSTABLE = Properties.UNSTABLE;
 
     public ToweringGoo(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {

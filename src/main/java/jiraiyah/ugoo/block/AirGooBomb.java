@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.AirGooBombBlockEntity;
 import jiraiyah.ugoo.blockentity.ChunkGooBombBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
@@ -21,11 +22,19 @@ import org.jetbrains.annotations.Nullable;
 
 public class AirGooBomb extends BlockWithEntity
 {
+    public static final MapCodec<AirGooBomb> CODEC = createCodec(AirGooBomb::new);
+
     public static final BooleanProperty UNSTABLE = Properties.UNSTABLE;
 
     public AirGooBomb(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {

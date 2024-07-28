@@ -1,5 +1,6 @@
 package jiraiyah.ugoo.block;
 
+import com.mojang.serialization.MapCodec;
 import jiraiyah.ugoo.blockentity.LavaGeneratingGooBlockEntity;
 import jiraiyah.ugoo.blockentity.LavaPumpGooBlockEntity;
 import jiraiyah.ugoo.registry.ModBlockEntities;
@@ -23,9 +24,17 @@ import org.jetbrains.annotations.Nullable;
 
 public class LavaPumpGoo extends BlockWithEntity
 {
+    public static final MapCodec<LavaPumpGoo> CODEC = createCodec(LavaPumpGoo::new);
+
     public LavaPumpGoo(Settings settings)
     {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec()
+    {
+        return CODEC;
     }
 
     public BlockRenderType getRenderType(BlockState state) {
