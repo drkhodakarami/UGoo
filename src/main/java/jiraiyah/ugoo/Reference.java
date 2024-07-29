@@ -24,7 +24,6 @@
 
 package jiraiyah.ugoo;
 
-import net.minecraft.entity.EntityType;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.MutableText;
@@ -105,13 +104,19 @@ public class Reference
     @NotNull
     public static Identifier identifier(@NotNull String path)
     {
-        return new Identifier(ModID, path);
+        return Identifier.of(ModID, path);
     }
 
     @NotNull
     public static Identifier vanillaID(@NotNull String path)
     {
-        return new Identifier(path);
+        return Identifier.ofVanilla(path);
+    }
+
+    @NotNull
+    public static Identifier idOf(@NotNull String path)
+    {
+        return Identifier.of(path);
     }
 
     public static MutableText translate(String key, Object... params)

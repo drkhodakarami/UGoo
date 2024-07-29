@@ -7,6 +7,11 @@ public class Utils
     public Utils() {
     }
 
+    public static float getChance(int value)
+    {
+        return (100 - value) / 100.0f;
+    }
+
     public static BlockPos getPositionDirectionTo(BlockPos position, int i)
     {
         if(i == 0)

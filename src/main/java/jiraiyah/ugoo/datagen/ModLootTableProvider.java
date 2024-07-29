@@ -27,15 +27,19 @@ package jiraiyah.ugoo.datagen;
 import jiraiyah.ugoo.registry.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 import static jiraiyah.ugoo.Reference.logRGB256;
 
 @SuppressWarnings("ALL")
 public class ModLootTableProvider extends FabricBlockLootTableProvider
 {
-    public ModLootTableProvider(FabricDataOutput dataOutput)
+
+    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup)
     {
-        super(dataOutput);
+        super(dataOutput, registryLookup);
     }
 
     @Override

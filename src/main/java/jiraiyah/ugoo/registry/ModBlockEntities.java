@@ -59,67 +59,67 @@ public class ModBlockEntities
         log("Registering Block Entities");
 
         AIR_GOO_BOMB = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("air_goo_bomb"),
-                                           FabricBlockEntityTypeBuilder.create(
+                                         BlockEntityType.Builder.create(
                                                    AirGooBombBlockEntity::new, new Block[]{ModBlocks.AIR_GOO_BOMB}
                                            ).build(null));
 
         STONE_GOO_BOMB = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("stone_goo_bomb"),
-                                         FabricBlockEntityTypeBuilder.create(
+                                           BlockEntityType.Builder.create(
                                                  StoneGooBombBlockEntity::new, new Block[]{ModBlocks.STONE_GOO_BOMB}
                                          ).build(null));
 
         BRIDGE_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("bridge_goo"),
-                                      FabricBlockEntityTypeBuilder.create(
+                                       BlockEntityType.Builder.create(
                                               BridgeGooBlockEntity::new, new Block[]{ModBlocks.BRIDGE_GOO}
                                       ).build(null));
 
         CHUNK_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("chunk_goo"),
-                                        FabricBlockEntityTypeBuilder.create(
+                                      BlockEntityType.Builder.create(
                                             ChunkGooBlockEntity::new, new Block[]{ModBlocks.CHUNK_GOO}
                                                 ).build(null));
 
         CHUNK_GOO_BOMB = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("chunk_goo_bomb"),
-                                         FabricBlockEntityTypeBuilder.create(
+                                           BlockEntityType.Builder.create(
                                                  ChunkGooBombBlockEntity::new, new Block[]{ModBlocks.CHUNK_GOO_BOMB}
                                          ).build(null));
 
         LAVA_EATING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("lava_eating_goo"),
-                                      FabricBlockEntityTypeBuilder.create(
+                                            BlockEntityType.Builder.create(
                                               LavaEatingGooBlockEntity::new, new Block[]{ModBlocks.LAVA_EATING_GOO}
                                       ).build(null));
 
         LAVA_GENERATING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("lava_generating_goo"),
-                                                FabricBlockEntityTypeBuilder.create(
+                                                BlockEntityType.Builder.create(
                                                     LavaGeneratingGooBlockEntity::new, new Block[]{ModBlocks.LAVA_GENERATING_GOO}
                                             ).build(null));
 
         LAVA_PUMP_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("lava_pump_goo"),
-                                                FabricBlockEntityTypeBuilder.create(
+                                          BlockEntityType.Builder.create(
                                                         LavaPumpGooBlockEntity::new, new Block[]{ModBlocks.LAVA_PUMP_GOO}
                                                 ).build(null));
 
         TOWERING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("towering_goo"),
-                                      FabricBlockEntityTypeBuilder.create(
+                                         BlockEntityType.Builder.create(
                                               ToweringGooBlockEntity::new, new Block[]{ModBlocks.TOWERING_GOO}
                                       ).build(null));
 
         TUNNELING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("tunneling_goo"),
-                                         FabricBlockEntityTypeBuilder.create(
+                                          BlockEntityType.Builder.create(
                                                  TunnelingGooBlockEntity::new, new Block[]{ModBlocks.TUNNELING_GOO}
                                          ).build(null));
 
         WATER_EATING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("water_eating_goo"),
-                                            FabricBlockEntityTypeBuilder.create(
+                                             BlockEntityType.Builder.create(
                                                     WaterEatingGooBlockEntity::new, new Block[]{ModBlocks.WATER_EATING_GOO}
                                             ).build(null));
 
         WATER_GENERATING_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("water_generating_goo"),
-                                                FabricBlockEntityTypeBuilder.create(
+                                                 BlockEntityType.Builder.create(
                                                         WaterGeneratingGooBlockEntity::new, new Block[]{ModBlocks.WATER_GENERATING_GOO}
                                                 ).build(null));
 
         WATER_PUMP_GOO = Registry.register(Registries.BLOCK_ENTITY_TYPE, identifier("water_pump_goo"),
-                                                 FabricBlockEntityTypeBuilder.create(
+                                           BlockEntityType.Builder.create(
                                                          WaterPumpGooBlockEntity::new, new Block[]{ModBlocks.WATER_PUMP_GOO}
                                                  ).build(null));
     }

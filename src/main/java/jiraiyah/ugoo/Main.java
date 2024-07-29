@@ -19,6 +19,18 @@ public class Main implements ModInitializer
 	public static final GameRules.Key<GameRules.IntRule> PUMP_DISTANCE;
 	public static final GameRules.Key<GameRules.IntRule> PUMP_DEPTH;
 
+	public static final GameRules.Key<GameRules.IntRule> AIR_BOMB_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> CHUNK_BOMB_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> LAVA_EATING_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> LAVA_GENERATING_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> STONE_BOMB_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> TOWERING_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> WATER_EATING_CHANCE;
+	public static final GameRules.Key<GameRules.IntRule> WATER_GENERATING_CHANCE;
+
+	public static final GameRules.Key<GameRules.IntRule> LAVA_PUMP_COOLDOWN;
+	public static final GameRules.Key<GameRules.IntRule> WATER_PUMP_COOLDOWN;
+
 	@Override
 	public void onInitialize()
 	{
@@ -34,5 +46,17 @@ public class Main implements ModInitializer
 		SPREAD_DISTANCE = GameRuleRegistry.register("gooSpreadDistance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(256));
 		PUMP_DISTANCE = GameRuleRegistry.register("pumpDistance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(128));
 		PUMP_DEPTH = GameRuleRegistry.register("pumpDepth", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(10));
+
+		AIR_BOMB_CHANCE = GameRuleRegistry.register("airBombChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(5));
+		CHUNK_BOMB_CHANCE = GameRuleRegistry.register("chunkBombChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(5));
+		LAVA_EATING_CHANCE = GameRuleRegistry.register("lavaEatingChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(2));
+		LAVA_GENERATING_CHANCE = GameRuleRegistry.register("lavaGeneratingChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(10));
+		STONE_BOMB_CHANCE = GameRuleRegistry.register("stoneBombChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(5));
+		TOWERING_CHANCE = GameRuleRegistry.register("toweringChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(5));
+		WATER_EATING_CHANCE = GameRuleRegistry.register("waterEatingChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(50));
+		WATER_GENERATING_CHANCE = GameRuleRegistry.register("waterGeneratingChance", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(10));
+
+		LAVA_PUMP_COOLDOWN = GameRuleRegistry.register("lavaPumpCooldown", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(20));
+		WATER_PUMP_COOLDOWN = GameRuleRegistry.register("waterPumpCooldown", GameRules.Category.UPDATES, GameRuleFactory.createIntRule(20));
 	}
 }

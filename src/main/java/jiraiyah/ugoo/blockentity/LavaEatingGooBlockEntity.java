@@ -2,7 +2,6 @@ package jiraiyah.ugoo.blockentity;
 
 import jiraiyah.ugoo.Main;
 import jiraiyah.ugoo.Utils;
-import jiraiyah.ugoo.block.ChunkGoo;
 import jiraiyah.ugoo.block.LavaEatingGoo;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import jiraiyah.ugoo.registry.ModBlocks;
@@ -26,18 +25,19 @@ public class LavaEatingGooBlockEntity extends BlockEntity
             !state.get(LavaEatingGoo.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.9)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.LAVA_EATING_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         BlockPos[] sides = Utils.getPositionNextTo(pos);
         for (BlockPos side : sides)
-            if (world.getBlockState(side).isOf(Blocks.LAVA))
-                // Set the next Goo
+            if (world.getBlockState(side).isOf(Blocks.LAVA) &&
+                world.getBlockState(side).getFluidState().isStill())
                 world.setBlockState(side,
                                     ModBlocks.LAVA_EATING_GOO.getDefaultState().with(LavaEatingGoo.UNSTABLE, true),
                                     3);
 
-        // Set ourselves to Air
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 }

@@ -2,7 +2,6 @@ package jiraiyah.ugoo.blockentity;
 
 import jiraiyah.ugoo.Main;
 import jiraiyah.ugoo.Utils;
-import jiraiyah.ugoo.block.ChunkGoo;
 import jiraiyah.ugoo.block.LavaGeneratingGoo;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import jiraiyah.ugoo.registry.ModBlocks;
@@ -26,18 +25,18 @@ public class LavaGeneratingGooBlockEntity extends BlockEntity
             !state.get(LavaGeneratingGoo.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.9)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.LAVA_GENERATING_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         BlockPos[] sides = Utils.getPositionSideBottomTo(pos);
         for (BlockPos side : sides)
             if (world.getBlockState(side).isOf(Blocks.AIR))
-                // Set the next Goo
                 world.setBlockState(side,
                                     ModBlocks.LAVA_GENERATING_GOO.getDefaultState().with(LavaGeneratingGoo.UNSTABLE, true),
                                     3);
 
-        // Set ourselves to Air
         world.setBlockState(pos, Blocks.LAVA.getDefaultState(), 3);
     }
 }

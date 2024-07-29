@@ -27,15 +27,13 @@ package jiraiyah.ugoo.registry;
 import jiraiyah.ugoo.block.*;
 import net.minecraft.block.*;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -80,17 +78,17 @@ public class ModBlocks
     {
         return Registry.register(Registries.ITEM, identifier(name),
                                  new BlockItem(block, new Item.Settings()) {
-                                     public void appendTooltip(ItemStack itemStack, @Nullable World level, List<Text> list, TooltipContext tooltipFlag)
+                                     @Override
+                                     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type)
                                      {
                                          if(warning)
-                                            list.add(Text.translatable("tooltip.ugoo.warning"));
+                                             tooltip.add(Text.translatable("tooltip.ugoo.warning"));
                                          if (Screen.hasShiftDown()) {
-                                             list.add(Text.translatable("tooltip.ugoo." + tooltip));
+                                             tooltip.add(Text.translatable("tooltip.ugoo." + tooltip));
                                          } else {
-                                             list.add(Text.translatable("tooltip.ugoo.shift"));
+                                             tooltip.add(Text.translatable("tooltip.ugoo.shift"));
                                          }
-
-                                         super.appendTooltip(itemStack, level, list, tooltipFlag);
+                                         super.appendTooltip(stack, context, tooltip, type);
                                      }
                                  });
     }

@@ -3,7 +3,6 @@ package jiraiyah.ugoo.blockentity;
 import jiraiyah.ugoo.Main;
 import jiraiyah.ugoo.Utils;
 import jiraiyah.ugoo.block.ChunkGooBomb;
-import jiraiyah.ugoo.block.ToweringGoo;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import jiraiyah.ugoo.registry.ModBlocks;
 import net.minecraft.block.BlockState;
@@ -28,7 +27,9 @@ public class ChunkGooBombBlockEntity extends BlockEntity
             !state.get(ChunkGooBomb.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.95)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.CHUNK_BOMB_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         BlockPos[] sides = Utils.getPositionSideTo(pos);
@@ -46,7 +47,6 @@ public class ChunkGooBombBlockEntity extends BlockEntity
         if(newPos.getY() > world.getBottomY())
         {
             if (!world.getBlockState(newPos).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos,
                             ModBlocks.CHUNK_GOO_BOMB.getDefaultState().with(ChunkGooBomb.UNSTABLE, true),
                             3);
@@ -72,7 +72,6 @@ public class ChunkGooBombBlockEntity extends BlockEntity
                                     3);
         }
 
-        // Set ourselves to Air
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 }

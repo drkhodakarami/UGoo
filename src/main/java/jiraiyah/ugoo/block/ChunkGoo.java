@@ -19,8 +19,8 @@ import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -52,28 +52,25 @@ public class ChunkGoo extends BlockWithEntity
         builder.add(UNSTABLE);
     }
 
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit)
-    {
-        ItemStack itemStack = player.getStackInHand(hand);
-        if (!itemStack.isOf(Items.FLINT_AND_STEEL))
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!stack.isOf(Items.FLINT_AND_STEEL))
         {
-            return super.onUse(state, world, pos, player, hand, hit);
+            return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
         }
         else
         {
             world.setBlockState(pos, state.with(UNSTABLE, true), 3);
-            Item item = itemStack.getItem();
-            if (!player.isCreative())
-            {
-                if (itemStack.isOf(Items.FLINT_AND_STEEL))
-                {
-                    itemStack.damage(1, player, playerx -> playerx.sendToolBreakStatus(hand));
+            Item item = stack.getItem();
+            if (!player.isCreative()) {
+                if (stack.isOf(Items.FLINT_AND_STEEL)) {
+                    stack.damage(1, player, LivingEntity.getSlotForHand(hand));
+                } else {
+                    stack.decrement(1);
                 }
             }
 
             player.incrementStat(Stats.USED.getOrCreateStat(item));
-            return ActionResult.success(world.isClient);
+            return ItemActionResult.success(world.isClient);
         }
     }
 

@@ -8,7 +8,6 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
 import static jiraiyah.ugoo.Reference.logBackRGB256;
-import static jiraiyah.ugoo.Reference.logRGB256;
 
 public class DataGen implements DataGeneratorEntrypoint
 {

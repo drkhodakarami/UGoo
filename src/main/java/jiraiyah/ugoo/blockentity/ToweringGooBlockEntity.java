@@ -2,7 +2,6 @@ package jiraiyah.ugoo.blockentity;
 
 import jiraiyah.ugoo.Main;
 import jiraiyah.ugoo.Utils;
-import jiraiyah.ugoo.block.ChunkGoo;
 import jiraiyah.ugoo.block.ToweringGoo;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import jiraiyah.ugoo.registry.ModBlocks;
@@ -28,7 +27,9 @@ public class ToweringGooBlockEntity extends BlockEntity
             !state.get(ToweringGoo.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.9)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.TOWERING_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         BlockPos[] sides = Utils.getPositionSideTo(pos);
@@ -44,38 +45,31 @@ public class ToweringGooBlockEntity extends BlockEntity
         if(newPos.getY() > world.getBottomY())
         {
             if (!world.getBlockState(newPos).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos,
                             ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                             3);
             if (!world.getBlockState(newPos.down()).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos.down(),
                                     ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                                     3);
             if (!world.getBlockState(newPos.down(2)).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos.down(2),
                                     ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                                     3);
             if (!world.getBlockState(newPos.down(3)).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos.down(3),
                                     ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                                     3);
             if (!world.getBlockState(newPos.down(4)).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos.down(4),
                                     ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                                     3);
             if (!world.getBlockState(newPos.down(5)).isIn(TOWERING_GOO_BLACKLIST))
-                // Set the next Goo
                 world.setBlockState(newPos.down(5),
                                     ModBlocks.TOWERING_GOO.getDefaultState().with(ToweringGoo.UNSTABLE, true),
                                     3);
         }
 
-        // Set ourselves to Air
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 }

@@ -4,7 +4,6 @@ import jiraiyah.ugoo.registry.ModBlocks;
 import me.shedaniel.rei.api.client.entry.filtering.base.BasicFilteringRule;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.common.util.EntryStacks;
-import net.minecraft.item.ItemStack;
 
 public class ModREIClientPlugin implements REIClientPlugin
 {

@@ -8,17 +8,14 @@ import jiraiyah.ugoo.registry.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 import static jiraiyah.ugoo.Reference.Tags.Block.TUNNELING_GOO_BLACKLIST;
-import static jiraiyah.ugoo.Reference.log;
 
 public class TunnelingGooBlockEntity extends BlockEntity
 {
-    private int x, y, z;
     public TunnelingGooBlockEntity(BlockPos pos, BlockState state)
     {
         super(ModBlockEntities.TUNNELING_GOO, pos, state);

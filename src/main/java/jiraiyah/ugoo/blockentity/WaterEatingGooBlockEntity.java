@@ -26,18 +26,19 @@ public class WaterEatingGooBlockEntity extends BlockEntity
             !state.get(WaterEatingGoo.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.9)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.WATER_EATING_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         BlockPos[] sides = Utils.getPositionNextTo(pos);
         for (BlockPos side : sides)
-            if (world.getBlockState(side).isOf(Blocks.WATER))
-                // Set the next Goo
+            if (world.getBlockState(side).isOf(Blocks.WATER) &&
+                world.getBlockState(side).getFluidState().isStill())
                 world.setBlockState(side,
                                     ModBlocks.WATER_EATING_GOO.getDefaultState().with(WaterEatingGoo.UNSTABLE, true),
                                     3);
 
-        // Set ourselves to Air
         world.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
     }
 }

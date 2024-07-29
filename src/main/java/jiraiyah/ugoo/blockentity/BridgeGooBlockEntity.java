@@ -12,7 +12,6 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 import static jiraiyah.ugoo.Reference.Tags.Block.BRIDGE_GOO_BLACKLIST;
-import static jiraiyah.ugoo.Reference.Tags.Block.TUNNELING_GOO_BLACKLIST;
 
 public class BridgeGooBlockEntity extends BlockEntity
 {

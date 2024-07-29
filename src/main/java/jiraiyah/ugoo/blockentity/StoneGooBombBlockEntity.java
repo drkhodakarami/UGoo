@@ -1,6 +1,7 @@
 package jiraiyah.ugoo.blockentity;
 
 import jiraiyah.ugoo.Main;
+import jiraiyah.ugoo.Utils;
 import jiraiyah.ugoo.block.AirGooBomb;
 import jiraiyah.ugoo.registry.ModBlockEntities;
 import net.minecraft.block.BlockState;
@@ -23,7 +24,9 @@ public class StoneGooBombBlockEntity extends BlockEntity
             !state.get(AirGooBomb.UNSTABLE))
             return;
 
-        if(world.getRandom().nextFloat() < 0.95)
+        float chance = Utils.getChance(world.getGameRules().getInt(Main.STONE_BOMB_CHANCE));
+
+        if(world.getRandom().nextFloat() < chance)
             return;
 
         world.setBlockState(pos, Blocks.STONE.getDefaultState(), 3);
